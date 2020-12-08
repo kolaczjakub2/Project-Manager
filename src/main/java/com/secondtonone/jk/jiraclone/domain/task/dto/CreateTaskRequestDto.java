@@ -2,14 +2,16 @@ package com.secondtonone.jk.jiraclone.domain.task.dto;
 
 import com.secondtonone.jk.jiraclone.domain.task.Task;
 
+import java.util.UUID;
+
 public class CreateTaskRequestDto {
     private String summary;
     private String description;
     private String estimatedTime;
-    private String assigneeId;
-    private String creatorId;
-    private String projectId;
-    private String releaseId;
+    private UUID assigneeId;
+    private UUID creatorId;
+    private UUID releaseId;
+    private UUID mainTaskId;
 
     public String getSummary() {
         return summary;
@@ -35,23 +37,35 @@ public class CreateTaskRequestDto {
         this.estimatedTime = estimatedTime;
     }
 
-    public String getAssigneeId() {
+    public UUID getAssigneeId() {
         return assigneeId;
     }
 
-    public void setAssigneeId(String assigneeId) {
+    public void setAssigneeId(UUID assigneeId) {
         this.assigneeId = assigneeId;
     }
 
-    public String getCreatorId() {
+    public UUID getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(String creatorId) {
+    public void setCreatorId(UUID creatorId) {
         this.creatorId = creatorId;
     }
 
-    public Task toTask() {
-        return new Task();
+    public UUID getReleaseId() {
+        return releaseId;
+    }
+
+    public void setReleaseId(UUID releaseId) {
+        this.releaseId = releaseId;
+    }
+
+    public UUID getMainTaskId() {
+        return mainTaskId;
+    }
+
+    public void setMainTaskId(UUID mainTaskId) {
+        this.mainTaskId = mainTaskId;
     }
 }

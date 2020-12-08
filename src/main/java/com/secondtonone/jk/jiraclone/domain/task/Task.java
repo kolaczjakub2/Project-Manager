@@ -96,12 +96,88 @@ public class Task {
         return new CreateTaskRequestDto();
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public static final class Builder {
         private String summary;
         private String description;
         private String estimatedTime;
+        private Date createdDate;
+        private Date lastModifiedDate;
+        private Status status;
+        private Resolution resolution;
+        private Priority priority;
+        private String labels;
+        private TaskType type;
+        private UserAccount creator;
+        private UserAccount assignee;
+        private Set<UserAccount> watchers;
+        private Release release;
+        private Task mainTask;
+        private Set<Comment> comments;
+        private Set<Task> subTask;
+        private Set<Change> changes;
+        private Set<Transition> transitions;
 
+
+
+        public Builder withSummary(String summary) {
+            this.summary = summary;
+            return this;
+        }
+
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder withEstimatedTime(String estimatedTime) {
+            this.estimatedTime = estimatedTime;
+            return this;
+        }
+
+        public Builder withAssignee(UserAccount assignee) {
+            this.assignee = assignee;
+            return this;
+        }
+
+        public Builder withCreator(UserAccount creator) {
+            this.creator = creator;
+            return this;
+        }
+
+        public Builder withRelease(Release release) {
+            this.release = release;
+            return this;
+        }
+
+        public Builder withMainTask(Task mainTask) {
+            this.mainTask = mainTask;
+            return this;
+        }
+
+        public Task build() {
+            if (creator == null) {
+                throw new IllegalStateException("Creator cannot be empty");
+            }
+
+            if (status == null) {
+                throw new IllegalStateException("Status cannot be empty");
+            }
+
+            Task task = new Task();
+            task.summary = this.summary;
+            task.description = this.description;
+            task.estimatedTime = this.estimatedTime;
+            task.assignee = this.assignee;
+            task.creator = this.creator;
+            task.release = this.release;
+            task.mainTask = this.mainTask;
+
+            return task;
+        }
 
     }
 

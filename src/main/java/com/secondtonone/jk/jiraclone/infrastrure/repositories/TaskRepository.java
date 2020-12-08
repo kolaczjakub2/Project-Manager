@@ -1,4 +1,4 @@
-package com.secondtonone.jk.jiraclone.infrastrure.repositories.task;
+package com.secondtonone.jk.jiraclone.infrastrure.repositories;
 
 import com.secondtonone.jk.jiraclone.domain.task.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
