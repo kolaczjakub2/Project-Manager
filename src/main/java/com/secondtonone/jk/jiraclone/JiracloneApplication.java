@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties
-@EntityScan(basePackages = {"com.secondtonone.jk.jiraclone.model"})
+@EntityScan(basePackages = {"com.secondtonone.jk.jiraclone.domain.*"})
 public class JiracloneApplication {
 
     public static void main(String[] args) {
