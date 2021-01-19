@@ -2,6 +2,7 @@ package com.secondtonone.jk.jiraclone.domain.task;
 
 import com.secondtonone.jk.jiraclone.domain.users.UserAccount;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Audited(withModifiedFlag = true)
 public class Transition {
 
     @Id

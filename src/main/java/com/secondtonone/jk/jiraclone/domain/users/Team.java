@@ -1,6 +1,7 @@
 package com.secondtonone.jk.jiraclone.domain.users;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Audited(withModifiedFlag = true)
 public class Team {
 
     @Id
@@ -21,5 +23,5 @@ public class Team {
     private String name;
 
     @ManyToMany(mappedBy = "teams")
-    private List<UserAccount> members = new ArrayList<>();
+    private final List<UserAccount> members = new ArrayList<>();
 }

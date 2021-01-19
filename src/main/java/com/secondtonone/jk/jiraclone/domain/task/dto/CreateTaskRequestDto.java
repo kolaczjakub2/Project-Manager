@@ -1,6 +1,7 @@
 package com.secondtonone.jk.jiraclone.domain.task.dto;
 
-import com.secondtonone.jk.jiraclone.domain.task.Task;
+import com.secondtonone.jk.jiraclone.domain.task.enums.Priority;
+import com.secondtonone.jk.jiraclone.domain.task.enums.TaskType;
 
 import java.util.UUID;
 
@@ -11,7 +12,9 @@ public class CreateTaskRequestDto {
     private UUID assigneeId;
     private UUID creatorId;
     private UUID releaseId;
-    private UUID mainTaskId;
+    private String mainTaskKey;
+    private Priority priority;
+    private TaskType taskType;
 
     public String getSummary() {
         return summary;
@@ -61,11 +64,27 @@ public class CreateTaskRequestDto {
         this.releaseId = releaseId;
     }
 
-    public UUID getMainTaskId() {
-        return mainTaskId;
+    public Priority getPriority() {
+        return priority;
     }
 
-    public void setMainTaskId(UUID mainTaskId) {
-        this.mainTaskId = mainTaskId;
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
+    public TaskType getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(TaskType taskType) {
+        this.taskType = taskType;
+    }
+
+    public String getMainTaskKey() {
+        return mainTaskKey;
+    }
+
+    public void setMainTaskKey(String mainTaskKey) {
+        this.mainTaskKey = mainTaskKey;
     }
 }
