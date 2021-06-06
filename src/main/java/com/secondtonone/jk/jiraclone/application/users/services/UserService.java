@@ -2,7 +2,7 @@ package com.secondtonone.jk.jiraclone.application.users.services;
 
 import com.secondtonone.jk.jiraclone.application.users.commands.GetAllUsersCommand;
 import com.secondtonone.jk.jiraclone.application.users.commands.GetContextCommand;
-import com.secondtonone.jk.jiraclone.domain.users.dto.SelectUserDto;
+import com.secondtonone.jk.jiraclone.application.users.dto.SelectUserDto;
 
 import java.util.UUID;
 

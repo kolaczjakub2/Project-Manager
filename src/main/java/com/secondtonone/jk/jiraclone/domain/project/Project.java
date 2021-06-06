@@ -23,8 +23,8 @@ public class Project {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private UserAccount owner;
+    @JoinColumn(name = "leader_id")
+    private UserAccount leader;
 
     @OneToMany(mappedBy = "project")
     private List<Release> releases = new ArrayList<>();
@@ -65,12 +65,12 @@ public class Project {
         this.description = description;
     }
 
-    public UserAccount getOwner() {
-        return owner;
+    public UserAccount getLeader() {
+        return leader;
     }
 
-    public void setOwner(UserAccount owner) {
-        this.owner = owner;
+    public void setLeader(UserAccount owner) {
+        this.leader = owner;
     }
 
     public List<Release> getReleases() {
@@ -86,6 +86,7 @@ public class Project {
         private String name;
         private String description;
         private String code;
+        private UserAccount leader;
 
         public Project.Builder withProjectId(UUID projectId) {
             this.projectId = projectId;
@@ -113,9 +114,15 @@ public class Project {
             project.name = this.name;
             project.description = this.description;
             project.code = this.code;
+            project.leader=this.leader;
+
             return project;
 
         }
 
+        public Builder withLeader(UserAccount leader) {
+            this.leader = leader;
+            return this;
+        }
     }
 }

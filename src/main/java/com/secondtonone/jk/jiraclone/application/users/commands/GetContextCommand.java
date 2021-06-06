@@ -1,6 +1,6 @@
 package com.secondtonone.jk.jiraclone.application.users.commands;
 
-import com.secondtonone.jk.jiraclone.infrastrure.repositories.UserAccountRepository;
+import com.secondtonone.jk.jiraclone.domain.users.repository.UserAccountRepository;
 
 import java.util.UUID;
 

@@ -1,7 +1,7 @@
 package com.secondtonone.jk.jiraclone.domain.users;
 
-import com.secondtonone.jk.jiraclone.domain.task.Task;
-import com.secondtonone.jk.jiraclone.domain.task.WorkLog;
+import com.secondtonone.jk.jiraclone.domain.project.task.Task;
+import com.secondtonone.jk.jiraclone.domain.project.task.WorkLog;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.envers.Audited;
 

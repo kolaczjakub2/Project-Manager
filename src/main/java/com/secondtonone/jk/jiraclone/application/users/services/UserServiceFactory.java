@@ -2,7 +2,7 @@ package com.secondtonone.jk.jiraclone.application.users.services;
 
 import com.secondtonone.jk.jiraclone.application.users.commands.GetAllUsersCommand;
 import com.secondtonone.jk.jiraclone.application.users.commands.GetContextCommand;
-import com.secondtonone.jk.jiraclone.infrastrure.repositories.UserAccountRepository;
+import com.secondtonone.jk.jiraclone.domain.users.repository.UserAccountRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

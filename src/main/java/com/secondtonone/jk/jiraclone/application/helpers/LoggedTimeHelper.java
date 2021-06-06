@@ -1,6 +1,6 @@
 package com.secondtonone.jk.jiraclone.application.helpers;
 
-import com.secondtonone.jk.jiraclone.domain.task.Task;
+import com.secondtonone.jk.jiraclone.domain.project.task.Task;
 
 public class LoggedTimeHelper {
 

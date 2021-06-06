@@ -1,7 +1,7 @@
 package com.secondtonone.jk.jiraclone.application.users.controllers;
 
 import com.secondtonone.jk.jiraclone.application.users.services.UserService;
-import com.secondtonone.jk.jiraclone.domain.users.dto.SelectUserDto;
+import com.secondtonone.jk.jiraclone.application.users.dto.SelectUserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
