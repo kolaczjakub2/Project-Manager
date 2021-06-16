@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping("projects")
 public class ProjectController {
@@ -30,9 +28,15 @@ public class ProjectController {
     }
 
     @GetMapping("/{projectId}/tasks")
-    public ResponseEntity<Iterable<SimpleTaskViewDto>> getAllTasksForProject(@PathVariable UUID projectId) {
+    public ResponseEntity<Iterable<SimpleTaskViewDto>> getAllTasksForProject(@PathVariable String projectId) {
         Iterable<SimpleTaskViewDto> tasks = projectService.getAllTasksForProject(projectId);
         return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
+    @GetMapping("/{projectId}")
+    public ResponseEntity<SelectProjectDto> getProject(@PathVariable String projectId) {
+        SelectProjectDto project = projectService.getProject(projectId);
+        return new ResponseEntity<>(project, HttpStatus.OK);
     }
 
 }

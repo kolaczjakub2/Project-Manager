@@ -6,7 +6,6 @@ import com.secondtonone.jk.jiraclone.domain.project.task.enums.Status;
 import com.secondtonone.jk.jiraclone.rest.api.project.project.exceptions.ProjectNotFoundException;
 import com.secondtonone.jk.jiraclone.rest.api.project.task.task.dto.SimpleTaskViewDto;
 
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class GetAllTaskForProjectCommand {
@@ -18,8 +17,8 @@ public class GetAllTaskForProjectCommand {
         this.projectRepository = projectRepository;
     }
 
-    public Iterable<SimpleTaskViewDto> execute(UUID projectId) {
-        return taskRepository.findByKeyContainsAndStatusNotOrderByKeyAsc(projectRepository.findById(projectId)
+    public Iterable<SimpleTaskViewDto> execute(String projectCode) {
+        return taskRepository.findByKeyContainsAndStatusNotOrderByKeyAsc(projectRepository.findByCode(projectCode)
                         .orElseThrow(() -> new ProjectNotFoundException("project not found"))
                         .getCode(),
                 Status.CLOSED)

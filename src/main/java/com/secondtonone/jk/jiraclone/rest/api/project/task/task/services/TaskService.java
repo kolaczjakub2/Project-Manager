@@ -77,10 +77,6 @@ public class TaskService {
         return this.getSubtasksCommand.execute(key);
     }
 
-    public Iterable<SimpleTaskViewDto> getAllTasksForProject(UUID projectId) {
-        return this.getAllTasksForProjectCommand.execute(projectId);
-    }
-
     public Optional<Task> assignMainTask(UUID uuid, String key) {
         Task saved = this.assignMainTaskCommand.execute(uuid, key);
         return Optional.of(saved);
