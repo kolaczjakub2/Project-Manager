@@ -1,9 +1,9 @@
 package com.secondtonone.jk.jiraclone.domain.project.task;
 
-import com.secondtonone.jk.jiraclone.application.project.task.exceptions.TaskCreationException;
+import com.secondtonone.jk.jiraclone.rest.api.project.task.task.exceptions.TaskCreationException;
 import com.secondtonone.jk.jiraclone.domain.DateAudit;
 import com.secondtonone.jk.jiraclone.domain.project.Release;
-import com.secondtonone.jk.jiraclone.application.project.task.dto.CreateTaskRequestDto;
+import com.secondtonone.jk.jiraclone.rest.api.project.task.task.dto.CreateTaskRequestDto;
 import com.secondtonone.jk.jiraclone.domain.project.task.enums.Priority;
 import com.secondtonone.jk.jiraclone.domain.project.task.enums.Resolution;
 import com.secondtonone.jk.jiraclone.domain.project.task.enums.Status;

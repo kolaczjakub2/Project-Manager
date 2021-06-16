@@ -1,6 +1,6 @@
 package com.secondtonone.jk.jiraclone.domain.project.task;
 
-import com.secondtonone.jk.jiraclone.application.project.task.exceptions.CommentCreateException;
+import com.secondtonone.jk.jiraclone.rest.api.project.task.comment.exceptions.CommentCreateException;
 import com.secondtonone.jk.jiraclone.domain.DateAudit;
 import com.secondtonone.jk.jiraclone.domain.users.UserAccount;
 import org.hibernate.annotations.GenericGenerator;
